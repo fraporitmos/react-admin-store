@@ -15,8 +15,12 @@ const CardNumber = ({name, number, color}) => {
         <p className="my-4 text-4xl font-bold text-left text-gray-800 dark:text-white">
             S/ {number}
         </p>
-        <div className="relative h-2 bg-gray-200 rounded w-28">
-            <div className={`absolute top-0 left-0 w-2/3 h-2 bg-${color}-500 rounded`}>
+        <div className={color =="indigo"
+         ? 'bg-indigo-500 relative h-2 rounded w-28' :  color == "green"
+         ? 'bg-green-500 relative h-2 rounded w-28': color == "orange" 
+         ? 'bg-orange-500 relative h-2 rounded w-28' : 'bg-blue-500 relative h-2 rounded w-28'
+        }>
+            <div  className={`absolute top-0 left-0  w-2/3 h-2 rounded`}>
             </div>
         </div>
     </div>

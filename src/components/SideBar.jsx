@@ -12,9 +12,9 @@ const SideBar = () => {
             <nav className="">
 
                 <div>
-                    <div class="flex items-center justify-center p-8">
-                        <img class="h-10" src={Logo} />
-                        <span class="text-gray-600 dark:text-gray-300 ml-4 text-1xl font-bold">
+                    <div className="flex items-center justify-center p-8">
+                        <img className="h-10" src={Logo} />
+                        <span className="text-gray-600 dark:text-gray-300 ml-4 text-1xl font-bold">
                             ReactAdmin
                         </span>
                     </div>

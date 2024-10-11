@@ -1,8 +1,12 @@
 import React from 'react'
+import Table from '../components/TableOrders'
 
 const Orders = () => {
   return (
-    <div>Orders</div>
+    <div className='p-8'>
+       <Table/>
+    </div>
+
   )
 }
 
