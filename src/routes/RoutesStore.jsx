@@ -1,16 +1,16 @@
 import React from 'react'
 import { createBrowserRouter, Outlet } from "react-router-dom";
 
-import Home from '../pages/Home';
-import Products from '../pages/Products';
-import Orders from '../pages/Orders';
-import Users from '../pages/Users';
-import SideBar from '../components/SideBar';
+import Home from '../pages/Home/Home';
+import Products from '../pages/Products/Products';
+import Orders from '../pages/Orders/Orders';
+import Users from '../pages/Users/Users';
+import SideBar from './components/SideBar';
 
 const AppLayout = () => {
   return (
-    <div className='bg-blue-950 flex'>
-      <SideBar/>
+    <div className='bg-gray-800 flex'>
+       <SideBar/>
       <div className='bg-gray-950 w-full'>
         <Outlet />
       </div>

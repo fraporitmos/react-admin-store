@@ -18,9 +18,7 @@ const Order = ({ img, names, phone, email, product, price, cantidad,weight ,fech
             <td className="px-5 py-5 text-xs bg-white border-b border-gray-200">
                 <div className="flex items-center">
                     <div className="flex-shrink-0">
-                        <a href="#" className="relative block">
                             <img alt="profil" src={img} className="mx-auto object-fit rounded-full h-24 w-24 " />
-                        </a>
                     </div>
                 </div>
             </td>

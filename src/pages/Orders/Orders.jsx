@@ -1,5 +1,5 @@
 import React from 'react'
-import Table from '../components/TableOrders'
+import Table from './components/TableOrders'
 
 const Orders = () => {
   return (

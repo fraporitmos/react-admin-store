@@ -15,6 +15,7 @@ const Table = () => {
                 const resp = await axios.get("http://localhost:3000/api/orders")
                 setOrders(resp.data.ventas)
             } catch (err) {
+                setOrders([])
                 console.log("Ocurrio un error" + err)
             }
         }
@@ -63,22 +64,25 @@ const Table = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.length > 0
-                                ?
-                                orders.map((item, index) => (
-                                    <Order
-                                        img={item.img}
-                                        names={item.names}
-                                        phone={item.phone}
-                                        email={item.email}
-                                        product={item.product}
-                                        cantidad={item.cantidad}
-                                        price={item.price}
-                                        weight={item.weight}
-                                        fecha={item.fecha}
-                                    />
-                                ))
-                                : <></>
+                            orders === undefined ?
+                                <></> :
+                                orders.length > 0
+                                    ?
+                                    orders.map((item, index) => (
+                                        <Order
+                                            key={index}
+                                            img={item.img}
+                                            names={item.names}
+                                            phone={item.phone}
+                                            email={item.email}
+                                            product={item.product}
+                                            cantidad={item.cantidad}
+                                            price={item.price}
+                                            weight={item.weight}
+                                            fecha={item.fecha}
+                                        />
+                                    ))
+                                    : <></>
                         }
                     </tbody>
                 </table>

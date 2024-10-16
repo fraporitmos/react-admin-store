@@ -2,19 +2,13 @@ import React, { useState } from 'react'
 import { AiFillEdit } from "react-icons/ai";
 import { AiFillDelete } from "react-icons/ai";
 
-
-
-const Product = ({ img, product, price, stock, weight, id, onClickEdit }) => {
-
-
+const Product = ({ img, product, price, stock, weight, id, onClickEdit, onClickDelete }) => {
     return (
         <tr>
             <td className="px-5 py-5 text-xs bg-white border-b border-gray-200">
                 <div className="flex items-center">
                     <div className="flex-shrink-0">
-                        <a href="#" className="relative block">
                             <img alt="profil" src={img} className="mx-auto object-fit rounded-full h-24 w-24 " />
-                        </a>
                     </div>
                 </div>
             </td>
@@ -26,7 +20,7 @@ const Product = ({ img, product, price, stock, weight, id, onClickEdit }) => {
             </td>
             <td className="px-5 py-5 text-xs  bg-white border-b border-gray-200">
                 <p className="text-gray-900 whitespace-no-wrap">
-                    {stock} unidades
+                    {stock} unids
                 </p>
             </td>
             <td className="px-5 py-5 text-xs  bg-white border-b border-gray-200">
@@ -49,14 +43,12 @@ const Product = ({ img, product, price, stock, weight, id, onClickEdit }) => {
 
                     </button>
 
-                    <button type="button" className="py-2 px-4  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-indigo-200 text-white  transition ease-in duration-200 text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                    <button type="button" onClick={onClickDelete} className="py-2 px-4  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-indigo-200 text-white  transition ease-in duration-200 text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                         <AiFillDelete />
 
                     </button>
                 </span>
             </td>
-
-
         </tr>
     )
 }
