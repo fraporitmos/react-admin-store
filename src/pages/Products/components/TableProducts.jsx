@@ -12,7 +12,7 @@ const TableProducts = () => {
         const fetchProducts = async () => {
 
             try {
-                const resp = await axios.get("http://localhost:3000/api/products")
+                const resp = await axios.get(`${import.meta.env.VITE_BASE_URL}/products`)
                 setProducts(resp.data.productos)
             } catch (err) {
                 console.log("Ocurrio un error" + err)

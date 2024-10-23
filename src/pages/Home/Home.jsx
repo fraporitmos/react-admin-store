@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import CardNumber from './components/CardNumber'
-import Chart from "chart.js/auto";
-import { CategoryScale } from "chart.js";
-import { Pie } from "react-chartjs-2";
 import PieChart from './components/PieChart';
 import { BarChart } from './components/BarChart';
 import LineChart from './components/LineChart';
@@ -33,7 +30,7 @@ const Home = () => {
             datasets: [
                 {
                     label: "Ganancia por mes",
-                    data: report.map((data) => data.ganacia),
+                    data: report.map((data) => data.category),
                     backgroundColor: [
                         "rgba(75,192,192,1)",
                         "#ecf0f1",
@@ -53,13 +50,13 @@ const Home = () => {
                 }
             ]
         });
+        
     }, [report]);
 
     const fetchReport = async () => {
         try {
-            const resp = await axios.get("http://localhost:3000/api/report_gain_month");
+            const resp = await axios.get(`${import.meta.env.VITE_BASE_URL}/report_gain_month`);
             setReport(resp.data.reporte);
-            console.log(resp.data.reporte);
         } catch (err) {
             console.log("Ocurrió un error: " + err);
         }
@@ -94,8 +91,6 @@ const Home = () => {
                     </>
                     : <></>
             }
-
-
         </>
     )
 }

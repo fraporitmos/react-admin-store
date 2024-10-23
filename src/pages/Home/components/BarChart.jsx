@@ -1,5 +1,11 @@
 // components/BarChart.js
+import React from "react";
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from "chart.js";
 import { Bar } from "react-chartjs-2";
+
+// Registro de los componentes necesarios
+ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+
 export const BarChart = ({ chartData }) => {
   return (
     <div className="chart-container w-1/2 mx-12">
@@ -10,12 +16,20 @@ export const BarChart = ({ chartData }) => {
           plugins: {
             title: {
               display: true,
-              text: "Users Gained between 2016-2020"
+              text: "Users Gained between 2016-2020",
             },
             legend: {
-              display: false
-            }
-          }
+              display: false,
+            },
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+            },
+            y: {
+              beginAtZero: true,
+            },
+          },
         }}
       />
     </div>

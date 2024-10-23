@@ -12,7 +12,7 @@ const Table = () => {
         const fetchOrders = async () => {
 
             try {
-                const resp = await axios.get("http://localhost:3000/api/orders")
+                const resp = await axios.get(`${import.meta.env.VITE_BASE_URL}/orders`)
                 setOrders(resp.data.ventas)
             } catch (err) {
                 setOrders([])
